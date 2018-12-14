@@ -7,7 +7,6 @@ import Index from '../compents/index'
 export default class RouteComponent extends React.Component {
      render() {
          return (
-             <div>
                  <React.Fragment>
                      <Router>
                          <React.Fragment>
@@ -17,8 +16,7 @@ export default class RouteComponent extends React.Component {
                              </Switch>
                          </React.Fragment>
                      </Router>
-                 </React.Fragment>
-             </div>
+                 </React.Fragment>    
          );
      }
 }

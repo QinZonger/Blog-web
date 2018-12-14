@@ -6,11 +6,17 @@ import {
   Switch
 } from 'react-router-dom';
 
+import './App.css';
+import './common.css';
+import imgReact from './image/react.png'
 class App extends Component {
   render() {
     return (
       <div className="App">
-       <li><Link to="/index">Home</Link></li>
+       <header></header>
+       <div className="ani"></div>
+       {/* <li><Link to="/index">Home</Link></li>
+       <img className="app-img" src={imgReact} alt="" /> */}
       </div>
     );
   }
