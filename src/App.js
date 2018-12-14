@@ -5,7 +5,7 @@ import {
   Link,
   Switch
 } from 'react-router-dom';
-
+import Card from 'antd/lib/card';
 import './App.css';
 import './common.css';
 import imgReact from './image/react.png'
@@ -26,9 +26,19 @@ import imgWebpack from './image/webpack.png'
 class App extends Component {
   render() {
     return (
-      <div className="App">
-       <header></header>
-       <div className="ani" ref="ani"></div>
+      <div className="box">
+      <header></header>
+      <div className="App" ref="app">
+        <Card style={{ 
+              width: 300 ,
+              marginLeft :30,
+              marginTop :30
+                            
+              }}>
+        Welcome to here
+        </Card>
+      </div>
+      <div className="ani" ref="ani"></div>
       </div>
     );
   }
@@ -46,7 +56,7 @@ class App extends Component {
          let eleW = this.randomnum(20, 30) + 'px';
          let eletop =  this.randomnum( 30 , H ) - 30 + 'px';
          let eleleft = this.randomnum( 30 , W) - 30 + 'px';
-         elehtml += `<img ref="reactimg" style="width:${eleW} ; position: absolute;left : ${eleleft} ; top : ${eletop}; " src=${arr[j]} />`
+         elehtml += `<img ref="reactimg" style="width:${eleW} ; position:absolute; left : ${eleleft} ; top : ${eletop}; " src=${arr[j]} />`
       }
       //elehtml
       allimg += elehtml
@@ -59,6 +69,7 @@ class App extends Component {
                    , imgVue, imgWebpack
      ]
      this.ani(arrImg)
+     this.refs.app.style.left=this.refs.ani.offsetWidth/2 - 500 + 'px' ;
   }
 }
 
