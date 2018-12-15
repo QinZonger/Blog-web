@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/react-app/static/media/marko.907ee939.png"
   },
   {
-    "revision": "0acedbe73dfb6b090532",
-    "url": "/react-app/static/css/main.81dad741.chunk.css"
+    "revision": "1f8940fe978c87cd987c",
+    "url": "/react-app/static/css/main.e1cc53e3.chunk.css"
   },
   {
     "revision": "80566195d30940288243296bc7aa14d8",
     "url": "/react-app/static/media/webpack.80566195.png"
   },
   {
-    "revision": "4b7d6dbcd6af89c60d70",
-    "url": "/react-app/static/js/1.4b7d6dbc.chunk.js"
+    "revision": "945445a5dab54a5e422f",
+    "url": "/react-app/static/js/1.945445a5.chunk.js"
   },
   {
     "revision": "ec46125784e0b1f6cca6",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/react-app/static/media/react.8f65a033.png"
   },
   {
-    "revision": "0acedbe73dfb6b090532",
-    "url": "/react-app/static/js/main.0acedbe7.chunk.js"
+    "revision": "1f8940fe978c87cd987c",
+    "url": "/react-app/static/js/main.1f8940fe.chunk.js"
   },
   {
     "revision": "6b47d7fec15d3e1a5de086ac1c808f6d",
@@ -44,11 +44,11 @@ self.__precacheManifest = [
     "url": "/react-app/static/media/travis.c5a6d814.png"
   },
   {
-    "revision": "4b7d6dbcd6af89c60d70",
-    "url": "/react-app/static/css/1.23a0a7cb.chunk.css"
+    "revision": "945445a5dab54a5e422f",
+    "url": "/react-app/static/css/1.6f6172a9.chunk.css"
   },
   {
-    "revision": "3751828345c847ad93d92defc99e2314",
+    "revision": "8e670620177d7a53eb39a01f29be1d6d",
     "url": "/react-app/index.html"
   }
 ];
