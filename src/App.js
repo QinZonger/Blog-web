@@ -25,6 +25,7 @@ import imgWebpack from './image/webpack.png'
 
 class App extends Component {
   render() {
+    const { Meta } = Card;
     return (
       <div className="box">
       <header></header>
@@ -37,6 +38,17 @@ class App extends Component {
               }}>
         Welcome to here
         </Card>
+        <Link to="index">
+        <Card
+          hoverable
+          style={{ width: 300 ,marginLeft :30, marginTop :30}}
+          cover={<img alt="example" src="" />}
+        >
+          <Meta
+            title="javascript"
+            description="www.instagram.com"
+          />
+        </Card></Link>
       </div>
       <div className="ani" ref="ani"></div>
       </div>
