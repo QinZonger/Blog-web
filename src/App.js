@@ -5,6 +5,7 @@ import {
   Link,
   Switch
 } from 'react-router-dom';
+import {num} from './method/index'
 import Card from 'antd/lib/card';
 import './App.css';
 import './common.css';
@@ -28,7 +29,9 @@ class App extends Component {
     const { Meta } = Card;
     return (
       <div className="box">
-      <header></header>
+      <header ref="head">
+        
+      </header>
       <div className="App" ref="app">
       <div className="left-ani" ref="left"></div>
       <section>
@@ -84,35 +87,6 @@ class App extends Component {
         
       </section>
       <div className="right-ani" ref="right"></div>
-        {/* <Card style={{ 
-              width: 300 ,
-              marginLeft :30,
-              marginTop :30
-                            
-              }}>
-        Welcome to here
-        </Card>
-        <Link to="index">
-        <Card
-          hoverable
-          style={{ width: 300 ,marginLeft :30, marginTop :30}}
-          cover={<img alt="example" src='http://5b0988e595225.cdn.sohucs.com/images/20170927/92725f3bb28a4da8aa291785a22ac461.jpeg' />}
-        >
-          <Meta
-            title="WEB 前端"
-            description="www.instagram.com"
-          />
-        </Card></Link>
-        <Card
-          hoverable
-          style={{ width: 300 ,marginLeft :30, marginTop :30}}
-          cover={<img alt="example" src='http://5b0988e595225.cdn.sohucs.com/images/20170927/92725f3bb28a4da8aa291785a22ac461.jpeg' />}
-        >
-          <Meta
-            title="后台"
-            description="www.instagram.com"
-          />
-        </Card> */}
       </div>
       </div>
     );
@@ -145,7 +119,9 @@ class App extends Component {
                    , imgVue, imgWebpack
      ]
      this.ani(arrImg)
-     //this.refs.app.style.left=this.refs.ani.offsetWidth/2 - 500 + 'px' ;
+     let arr = '破解器局深是大科目局深是大局深是大局深是大局深是大局深是大'
+     let newarr = num(arr)
+     this.refs.head.innerHTML=newarr
   }
 }
 

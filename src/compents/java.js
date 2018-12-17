@@ -53,7 +53,7 @@ class Index extends Component {
           <a href="https://ant.design" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
         </Menu.Item>
       </Menu>
-      <Ele/>
+      <div className="ele"><Ele/></div>
         </section>
         <div className="right-ani"></div>
       </div>
