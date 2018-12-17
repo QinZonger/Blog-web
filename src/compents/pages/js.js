@@ -35,6 +35,25 @@ let Js = () => {
                     export { num }`}
                  </Highlight>
             </div>
+            <div style={{ background: '#ECECEC', padding: '30px' }}>
+                <Card title="Symbol 数据类型" bordered={false} style={{ width: 1080 }}>
+                <p>ES6 引入了一种新的原始数据类型`Symbol`，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：`undefined`、`null`、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
+                </Card>
+                <Highlight language="javascript">
+                {`var mySymbol = Symbol();
+                // 第一种写法
+                var a = {};
+                a[mySymbol] = 'Hello!';
+                // 第二种写法
+                var a = { [mySymbol]: 'Hello!'};
+                // 第三种写法
+                var a = {};
+                Object.defineProperty(a, mySymbol, { value: 'Hello!' });
+                // 以上写法都得到同样结果
+                a[mySymbol] // "Hello!"
+                `}
+                 </Highlight>
+            </div>
           </div>
       )
   

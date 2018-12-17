@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Card } from 'antd';
 import Highlight from 'react-highlight'
+import Control from '../ch/control'
 import './dva.css'
 let Dva = () => {
   
       return (
           <div className="dva-box">
+            <Control/>
             <div style={{ background: '#ECECEC', padding: '30px' }}>
                 <Card title="DVA 脚手架" bordered={false} style={{ width: 1080 }}>
                 <p>1 : npm install dva-cli -g</p>
