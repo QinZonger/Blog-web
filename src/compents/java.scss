@@ -1,19 +1,21 @@
-.index{
-    width: 100%;
-    height: 100%;
-    background: #5a5757;
+html,body,#root,.index {
+  width: 100%;
+  height: 100%;
 }
-section{
-    width: 1000px;
-    height: 100%;
-    background: #666;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.index {
+  display: flex;
 }
-.top-p{
-    height: 30px;
+
+
+.left-ani, .right-ani {
+  width: 300px;
+  height: auto;
+  background: #999;
+  //position: relative;
 }
-.con{
-    flex: 1;
+
+section {
+  flex: 1;
+  background: #666;
 }

@@ -30,6 +30,8 @@ class App extends Component {
       <div className="box">
       <header></header>
       <div className="App" ref="app">
+      <div className="left-ani" ref="left"></div>
+      <section>
         <Card style={{ 
               width: 300 ,
               marginLeft :30,
@@ -42,15 +44,76 @@ class App extends Component {
         <Card
           hoverable
           style={{ width: 300 ,marginLeft :30, marginTop :30}}
-          cover={<img alt="example" src="" />}
+          cover={<img alt="example" src='http://5b0988e595225.cdn.sohucs.com/images/20170927/92725f3bb28a4da8aa291785a22ac461.jpeg' />}
         >
           <Meta
-            title="javascript"
+            title="WEB 前端"
             description="www.instagram.com"
           />
         </Card></Link>
+        <Card
+          hoverable
+          style={{ width: 300 ,marginLeft :30, marginTop :30}}
+          cover={<img alt="example" src='https://dumielauxepices.net/sites/default/files/python-logo-clipart-green-python-730821-8527404.png' />}
+        >
+          <Meta
+            title="后台"
+            description="www.instagram.com"
+          />
+        </Card>
+        <Card
+          hoverable
+          style={{ width: 300 ,marginLeft :30, marginTop :30}}
+          cover={<img alt="example" src='https://avatars.githubusercontent.com/u/8900276' />}
+        >
+          <Meta
+            title="部署"
+            description="www.instagram.com"
+          />
+        </Card>
+        <Card
+          hoverable
+          style={{ width: 300 ,marginLeft :30, marginTop :30}}
+          cover={<img alt="example" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFrMq000r5Cqt-LeTpZR9D9o_03zoI8AECyR-452x-xWa8D31-' />}
+        >
+          <Meta
+            title="工具"
+            description="www.instagram.com"
+          />
+        </Card>
+        
+      </section>
+      <div className="right-ani" ref="right"></div>
+        {/* <Card style={{ 
+              width: 300 ,
+              marginLeft :30,
+              marginTop :30
+                            
+              }}>
+        Welcome to here
+        </Card>
+        <Link to="index">
+        <Card
+          hoverable
+          style={{ width: 300 ,marginLeft :30, marginTop :30}}
+          cover={<img alt="example" src='http://5b0988e595225.cdn.sohucs.com/images/20170927/92725f3bb28a4da8aa291785a22ac461.jpeg' />}
+        >
+          <Meta
+            title="WEB 前端"
+            description="www.instagram.com"
+          />
+        </Card></Link>
+        <Card
+          hoverable
+          style={{ width: 300 ,marginLeft :30, marginTop :30}}
+          cover={<img alt="example" src='http://5b0988e595225.cdn.sohucs.com/images/20170927/92725f3bb28a4da8aa291785a22ac461.jpeg' />}
+        >
+          <Meta
+            title="后台"
+            description="www.instagram.com"
+          />
+        </Card> */}
       </div>
-      <div className="ani" ref="ani"></div>
       </div>
     );
   }
@@ -58,13 +121,13 @@ class App extends Component {
     return Math.floor(Math.random() * ( max-min+1 ) + min)
   }
   ani (arr) { //动画
-    let H =this.refs.ani.offsetHeight;
-    let W =this.refs.ani.offsetWidth;
+    let H =this.refs.left.offsetHeight;
+    let W =this.refs.left.offsetWidth;
     let allimg='';
     for ( var j = 0 ; j < arr.length ; j++ ){
       let elehtml = '';
       //最初生成
-      for ( var i = 0; i<this.randomnum(5,10) ; i ++ ) {
+      for ( var i = 0; i<this.randomnum(2,4) ; i ++ ) {
          let eleW = this.randomnum(20, 30) + 'px';
          let eletop =  this.randomnum( 30 , H ) - 30 + 'px';
          let eleleft = this.randomnum( 30 , W) - 30 + 'px';
@@ -73,7 +136,8 @@ class App extends Component {
       //elehtml
       allimg += elehtml
     }
-    this.refs.ani.innerHTML=allimg;
+    this.refs.left.innerHTML=allimg;
+    this.refs.right.innerHTML=allimg;
   }
   componentDidMount(){
      let arrImg = [ imgReact, imgEgg, imgNode, imgDocker, imgJs, imgKoa, 
@@ -81,7 +145,7 @@ class App extends Component {
                    , imgVue, imgWebpack
      ]
      this.ani(arrImg)
-     this.refs.app.style.left=this.refs.ani.offsetWidth/2 - 500 + 'px' ;
+     //this.refs.app.style.left=this.refs.ani.offsetWidth/2 - 500 + 'px' ;
   }
 }
 
