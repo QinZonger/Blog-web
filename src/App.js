@@ -119,9 +119,6 @@ class App extends Component {
                    , imgVue, imgWebpack
      ]
      this.ani(arrImg)
-     let arr = '破解器局深是大科目局深是大局深是大局深是大局深是大局深是大'
-     let newarr = num(arr)
-     this.refs.head.innerHTML=newarr
   }
 }
 

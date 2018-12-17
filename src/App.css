@@ -1,7 +1,6 @@
-@import '~antd/dist/antd.css';
 html, body, #root, .box {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .box {
@@ -22,7 +21,7 @@ header {
 
 .left-ani, .right-ani {
   width: 300px;
-  height: auto;
+  height: 100%;
   background: #999;
   position: relative;
 }

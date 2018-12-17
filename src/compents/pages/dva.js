@@ -15,35 +15,47 @@ let Dva = () => {
             </div>
             <div style={{ background: '#ECECEC', padding: '30px' }}>
                 <Card title="Model" bordered={false} style={{ width: 1080 }}>
-                <p>1 : npm install dva-cli -g</p>
-                <p>2 : dva new dva-quickstart</p>
-                <p>3 : cd dva-quickstart npm start</p>
-                </Card>
-                <Highlight innerHTML={true}>{'<p>Hello world</p>'}</Highlight>
+                <p>model文件</p>
                 <Highlight language="javascript">
-                {`let a = () => {
-                        return new Promise((resolve, reject)=>{
-                            setTimeout(()=>{
-                                resolve('pp')
-                            },2000)
-                        })
-                    }
-                    let b = () => {
-                        return new Promise((resolve, reject)=>{
-                            setTimeout(()=>{
-                                resolve('pp')
-                            },3000)
-                        })
-                    }
-                    let num = async (arr) => {
-                        console.log('kais')
-                        let as = await a()
-                        console.log(as,'------as')
-                        let bs = await b()
-                        console.log(bs,'------bs')
-                    }
-                    export { num }`}
+                {`      export default {
+                        namespace: 'detail',
+
+                        state: {
+                            object: {}
+                        },
+
+                        effects: {
+                        *change({payload} , { call, put }) {
+                                console.log(payload,'-----payload')
+                                yield put({
+                                    type: 'set',
+                                    payload
+                                })
+                        }
+                        },
+                        reducers: {
+                        set(state, action) {
+                            console.log({...state,object:action.payload},'--{...state,object:action.payload}')
+                            return {...state,object:action.payload}
+                        }
+                        }
+                    }`}
                  </Highlight>
+                <p>组件获取</p>
+                <Highlight language="javascript">
+                {`export default connect(({detail}) => ({
+                    detail
+                }))(Detail);`}
+                </Highlight>
+                <p>触发改变</p>
+                <Highlight language="javascript">
+                {`    const { dispatch } = this.props;
+                dispatch({
+                type: 'detail/change',
+                payload: this.state.ob
+                })`}
+                </Highlight>
+                </Card>
             </div>
           </div>
 

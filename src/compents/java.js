@@ -3,6 +3,7 @@ import { Menu, Icon } from 'antd';
 import './java.css'
 import Dva from './pages/dva'
 import Reacter from './pages/react'
+import Js from './pages/js'
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 class Index extends Component {
@@ -20,6 +21,8 @@ class Index extends Component {
     let Ele =  Dva;
     if (this.state.current === 'react'){
         Ele = Reacter
+    }else if(this.state.current === 'js'){
+      Ele = Js
     }
     return (
       <div className="index">
