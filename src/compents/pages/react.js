@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 import Card from 'antd/lib/card';
 import Highlight from 'react-highlight'
+import Control from '../ch/control'
 import './react.css'
-let Reacter = () => {
-  
+class Reacter extends Component {
+    state = {
+        name :["REACT 脚手架","React 生命周期"]
+    }
+    render() {
+        const names = {
+            pa : this.state.name
+        } 
       return (
           <div className="react-box">
+            <Control {...names}/>
             <div style={{ background: '#ECECEC', padding: '30px' }}>
-                <Card title="REACT 脚手架" bordered={false} style={{ width: 1080 }}>
+                <Card title={this.state.name[0]} bordered={false} style={{ width: 1080 }}>
                 <p>1 : npm install -g create-react-app</p>
                 <p>2 : create-react-app my-app</p>
                 <p>3 : npm run start</p>
                 </Card>
             </div>
             <div style={{ background: '#ECECEC', padding: '30px' }}>
-                <Card title="React 生命周期" bordered={false} style={{ width: 1080 }}>
+                <Card title={this.state.name[1]} bordered={false} style={{ width: 1080 }}>
                 <h4>(旧)</h4>
                 <Highlight language="javascript">
                 {`UNSAFE_componentWillMount()`}
@@ -62,6 +70,6 @@ let Reacter = () => {
             </div>
           </div>
       )
-  
+    }
 }
 export default Reacter;

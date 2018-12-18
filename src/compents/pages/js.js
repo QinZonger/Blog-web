@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import Card from 'antd/lib/card';
 import Highlight from 'react-highlight'
+import Control from '../ch/control'
 import './js.css'
-let Js = () => {
-  
+class Js extends Component {
+    state = {
+        name :["Js async await","Symbol 数据类型"]
+    }
+    render() {
+        const names = {
+            pa : this.state.name
+        } 
       return (
           <div className="js-box">
+            <Control {...names}/>
             <div style={{ background: '#ECECEC', padding: '30px' }}>
-                <Card title="Js async await" bordered={false} style={{ width: 1080 }}>
+                <Card title={this.state.name[0]} bordered={false} style={{ width: 1080 }}>
                 <p>a函数完成之后才会执行b函数</p>
                 </Card>
                 <Highlight language="javascript">
@@ -36,7 +44,7 @@ let Js = () => {
                  </Highlight>
             </div>
             <div style={{ background: '#ECECEC', padding: '30px' }}>
-                <Card title="Symbol 数据类型" bordered={false} style={{ width: 1080 }}>
+                <Card title={this.state.name[1]} bordered={false} style={{ width: 1080 }}>
                 <p>ES6 引入了一种新的原始数据类型`Symbol`，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：`undefined`、`null`、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
                 </Card>
                 <Highlight language="javascript">
@@ -56,6 +64,7 @@ let Js = () => {
             </div>
           </div>
       )
+    }
   
 }
 export default Js;
