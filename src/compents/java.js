@@ -48,7 +48,7 @@ class Index extends Component {
             <Menu.Item key="setting:2">Option4 2</Menu.Item>
           </MenuItemGroup>
           <MenuItemGroup title="Item 2">
-            <Menu.Item key="setting:3">Option 3</Menu.Item>
+            <Menu.Item key="setting:3">Option r3</Menu.Item>
             <Menu.Item key="setting:4">Option 4</Menu.Item>
           </MenuItemGroup>
         </SubMenu>
