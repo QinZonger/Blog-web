@@ -74,7 +74,7 @@ class Dva extends Component {
       )
             }
             componentDidMount(){
-                
+
             }
             componentDidUpdate(){
                 console.log(this.refs.card.props.style)
