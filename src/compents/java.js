@@ -44,7 +44,7 @@ class Index extends Component {
         </Menu.Item>
         <SubMenu title={<span className="submenu-title-wrapper">Navigation Three - Submenu</span>}>
           <MenuItemGroup title="Item 1">
-            <Menu.Item key="setting:1">Option 1</Menu.Item>
+            <Menu.Item key="setting:1">Option 31</Menu.Item>
             <Menu.Item key="setting:2">Option4 2</Menu.Item>
           </MenuItemGroup>
           <MenuItemGroup title="Item 2">
