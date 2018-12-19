@@ -8,24 +8,27 @@ import './dva.css'
 class Dva extends Component {
       state = {
           name :["DVA 脚手架","Model"],
+          top:'',
+          arr : [] , //offsetTop值得数组
+          gettop : store.getState().control
       }
       render() {
       const names = {
           pa : this.state.name,
-          top : this.refs.card
+          top : this.state.top,
+          arr : this.state.arr
       } 
-      console.log(store.getState().control,'-----top')
       return (
-          <div className="dva-box">
+          <div className="dva-box" ref="userOrder">
             <Control {...names}/>
-            <div style={{ background: '#ECECEC', padding: '30px' }}>
+            <div style={{ background: '#ECECEC', padding: '30px' }} ref="div1" >
                 <Card ref="card" title={this.state.name[0]} bordered={false} style={{ width: 1080 , scrollTop : store.getState().control}}>
                 <p>1 : npm install dva-cli -g</p>
                 <p>2 : dva new dva-quickstart</p>
                 <p>3 : cd dva-quickstart npm start</p>
                 </Card>
             </div>
-            <div style={{ background: '#ECECEC', padding: '30px' }}>
+            <div style={{ background: '#ECECEC', padding: '30px' }} ref="div2">
                 <Card title={this.state.name[1]} bordered={false} style={{ width: 1080 }}>
                 <p>model文件</p>
                 <Highlight language="javascript">
@@ -74,16 +77,29 @@ class Dva extends Component {
       )
             }
             componentDidMount(){
-
+                window.addEventListener('scroll', this.orderScroll.bind(this));
+                this.setState({
+                    arr : [ 
+                            this.refs.div1.offsetTop,
+                            this.refs.div2.offsetTop 
+                    ]
+                })
+            }
+           
+            orderScroll(e) {
+                this.setState({
+                    top:e.srcElement.documentElement.scrollTop
+                })
             }
             componentDidUpdate(){
-                console.log(this.refs.card.props.style)
+        
             }
   
 }
 
 const mapStateToProps = state => ({
-    topd: state
+    //gettop: state
 });
+
 
 export default connect(mapStateToProps)(Dva);

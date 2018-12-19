@@ -5,16 +5,18 @@ import Control from '../ch/control'
 import './js.css'
 class Js extends Component {
     state = {
-        name :["Js async await","Symbol 数据类型"]
+        name :["Js async await","Symbol 数据类型"],
+        arr : []
     }
     render() {
         const names = {
-            pa : this.state.name
+            pa : this.state.name,
+            arr : this.state.arr
         } 
       return (
           <div className="js-box">
             <Control {...names}/>
-            <div style={{ background: '#ECECEC', padding: '30px' }}>
+            <div style={{ background: '#ECECEC', padding: '30px' }} ref="div1">
                 <Card title={this.state.name[0]} bordered={false} style={{ width: 1080 }}>
                 <p>a函数完成之后才会执行b函数</p>
                 </Card>
@@ -43,7 +45,7 @@ class Js extends Component {
                     export { num }`}
                  </Highlight>
             </div>
-            <div style={{ background: '#ECECEC', padding: '30px' }}>
+            <div style={{ background: '#ECECEC', padding: '30px' }} ref="div2">
                 <Card title={this.state.name[1]} bordered={false} style={{ width: 1080 }}>
                 <p>ES6 引入了一种新的原始数据类型`Symbol`，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：`undefined`、`null`、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
                 </Card>
@@ -64,6 +66,14 @@ class Js extends Component {
             </div>
           </div>
       )
+    }
+    componentDidMount(){
+        this.setState({
+            arr : [ 
+                    this.refs.div1.offsetTop,
+                    this.refs.div2.offsetTop,
+            ]
+        })
     }
   
 }

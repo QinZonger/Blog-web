@@ -5,23 +5,25 @@ import Control from '../ch/control'
 import './react.css'
 class Reacter extends Component {
     state = {
-        name :["REACT 脚手架","React 生命周期","react redux 的使用"]
+        name :["REACT 脚手架","React 生命周期","react redux 的使用"],
+        arr : []
     }
     render() {
         const names = {
-            pa : this.state.name
+            pa : this.state.name,
+            arr : this.state.arr
         } 
       return (
           <div className="react-box">
             <Control {...names}/>
-            <div style={{ background: '#ECECEC', padding: '30px' }}>
+            <div style={{ background: '#ECECEC', padding: '30px' }} ref="div1">
                 <Card title={this.state.name[0]} bordered={false} style={{ width: 1080 }}>
                 <p>1 : npm install -g create-react-app</p>
                 <p>2 : create-react-app my-app</p>
                 <p>3 : npm run start</p>
                 </Card>
             </div>
-            <div style={{ background: '#ECECEC', padding: '30px' }}>
+            <div style={{ background: '#ECECEC', padding: '30px' }} ref="div2">
                 <Card title={this.state.name[1]} bordered={false} style={{ width: 1080 }}>
                 <h4>(旧)</h4>
                 <Highlight language="javascript">
@@ -68,7 +70,7 @@ class Reacter extends Component {
                 </Highlight>
                 </Card>
             </div>
-            <div style={{ background: '#ECECEC', padding: '30px' }}>
+            <div style={{ background: '#ECECEC', padding: '30px' }} ref="div3">
                 <Card ref="card" title={this.state.name[2]} bordered={false} style={{ width: 1080 }}>
                 <p>1 : npm install react-redux --save-dev  npm install redux --save-dev</p>
                 <Highlight language="javascript">
@@ -144,6 +146,15 @@ class Reacter extends Component {
             </div>
           </div>
       )
+    }
+    componentDidMount(){
+        this.setState({
+            arr : [ 
+                    this.refs.div1.offsetTop,
+                    this.refs.div2.offsetTop,
+                    this.refs.div3.offsetTop 
+            ]
+        })
     }
 }
 export default Reacter;

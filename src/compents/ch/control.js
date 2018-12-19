@@ -4,9 +4,11 @@ import { connect } from "react-redux";
 import store from "../../redux/store";
 import './control.css'
 class Control extends Component {
-
+    state = {
+      a : 1
+    }
     render(){
-      const { pa , hand } = this.props
+       const { pa ,top , hand } = this.props
       return (
         <div className="con">
             {
@@ -14,7 +16,7 @@ class Control extends Component {
                 return (
                   <Button 
                   key={index}
-                  onClick={hand}
+                  onClick={this.hand.bind(this,index)}
                   >{item}</Button>
                 )
               })
@@ -22,19 +24,24 @@ class Control extends Component {
         </div>
       )
     }
+     hand (index){
+      const { arr } = this.props
+      window.scrollTo(0,arr[index])
+    }
 }
 const mapStateToProps = state => ({
   
 });
 const mapDispatchToProps = ( dispatch , pwn) => {
   return {
-    hand : () => {
-      console.log('dis---')
-      dispatch({
-        type : "MACK",
-        text : 1000
-      })
-    }
+    // hand : () => {
+    //   window.scrollTo(0,pwn.arr[1])
+    //   console.log(pwn.arr,'---pwd')
+    //   dispatch({
+    //     type : "MACK",
+    //     text : pwn.arr[1]
+    //   })
+    // }
   }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Control);
