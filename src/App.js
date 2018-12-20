@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom';
 import {num} from './method/index'
 import Card from 'antd/lib/card';
+import { Input ,Button ,Select} from 'zent';
+import 'zent/css/index.css';
 import './App.css';
 import './common.css';
 import imgReact from './image/react.png'
@@ -25,12 +27,54 @@ import imgVue from './image/vue.png'
 import imgWebpack from './image/webpack.png'
 
 class App extends Component {
+  state = {
+    value :'',
+    show: "谷歌",
+    selectedValue: '1'
+  }
+  // onChange = (e) => {
+  //   this.setState({
+  //     value: e.target.value
+  //   })
+  // }
+  // onClick(){
+  //   console.log(this.state.value)
+  // }
+  showOption(e,data){
+    this.setState({
+      show : data.name,
+      selectedValue: data.value
+    })
+  }
   render() {
     const { Meta } = Card;
+    const data = [
+      {id: 1, name: '谷歌'},
+      {id: 2, name: '百度'},
+    ];
     return (
       <div className="box">
-      <header ref="head">
-        
+      <header ref="head" className="header">
+        <div className="left">1</div>
+        <div className="search">
+            <div className="ser">
+            {
+               this.state.show === '谷歌'
+               ?
+               <form method="get" action="http://www.google.com/search"  target="_blank"> <input type="text" name="q" size="40"/><input type="submit" name="btnG" value="搜索"/> </form>
+               :
+               <form action="http://www.baidu.com/baidu" target="_blank"> <input type="text" name="word" size="40"/><input type="submit" value="搜索"/> </form>
+            }
+          <Select
+            data={data}
+            optionValue="id"
+            optionText="name"
+            onChange={this.showOption.bind(this)}
+            value={this.state.selectedValue}
+          />
+          </div>
+        </div>
+        <div className="right">2</div>
       </header>
       <div className="App" ref="app">
       <div className="left-ani" ref="left"></div>

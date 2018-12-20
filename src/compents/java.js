@@ -42,15 +42,9 @@ class Index extends Component {
         <Menu.Item key="js">
           JS
         </Menu.Item>
-        <SubMenu title={<span className="submenu-title-wrapper">Navigation Three - Submenu</span>}>
-          <MenuItemGroup title="Item 1">
-            <Menu.Item key="setting:1">Option 31</Menu.Item>
-            <Menu.Item key="setting:2">Option  2</Menu.Item>
-          </MenuItemGroup>
-          <MenuItemGroup title="Item 2">
-            <Menu.Item key="setting:3">Option 3</Menu.Item>
-            <Menu.Item key="setting:4">Option 4</Menu.Item>
-          </MenuItemGroup>
+        <SubMenu title={<span className="submenu-title-wrapper">工具</span>}>
+            <Menu.Item key="setting:1">Github</Menu.Item>
+            <Menu.Item key="setting:2">VsCode</Menu.Item>
         </SubMenu>
         <Menu.Item key="alipay">
           <a href="https://ant.design" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
