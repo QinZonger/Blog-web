@@ -97,38 +97,7 @@ class App extends Component {
             title="WEB 前端"
             description="www.instagram.com"
           />
-        </Card></Link>
-        <Card
-          hoverable
-          style={{ width: 300 ,marginLeft :30, marginTop :30}}
-          cover={<img alt="example" src='https://dumielauxepices.net/sites/default/files/python-logo-clipart-green-python-730821-8527404.png' />}
-        >
-          <Meta
-            title="后台"
-            description="www.instagram.com"
-          />
-        </Card>
-        <Card
-          hoverable
-          style={{ width: 300 ,marginLeft :30, marginTop :30}}
-          cover={<img alt="example" src='https://avatars.githubusercontent.com/u/8900276' />}
-        >
-          <Meta
-            title="部署"
-            description="www.instagram.com"
-          />
-        </Card>
-        <Card
-          hoverable
-          style={{ width: 300 ,marginLeft :30, marginTop :30}}
-          cover={<img alt="example" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFrMq000r5Cqt-LeTpZR9D9o_03zoI8AECyR-452x-xWa8D31-' />}
-        >
-          <Meta
-            title="工具"
-            description="www.instagram.com"
-          />
-        </Card>
-        
+        </Card></Link>        
       </section>
       <div className="right-ani" ref="right"></div>
       </div>
@@ -154,8 +123,8 @@ class App extends Component {
       //elehtml
       allimg += elehtml
     }
-    this.refs.left.innerHTML=allimg;
-    this.refs.right.innerHTML=allimg;
+    //this.refs.left.innerHTML=allimg;
+    //this.refs.right.innerHTML=allimg;
   }
   componentDidMount(){
      let arrImg = [ imgReact, imgEgg, imgNode, imgDocker, imgJs, imgKoa, 
